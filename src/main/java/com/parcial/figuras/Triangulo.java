@@ -38,12 +38,12 @@ public class Triangulo extends Figura {
 
     @Override
     public double calcularArea() {
-        throw new UnsupportedOperationException("pendiente");
+        return base * altura / 2;
     }
 
     @Override
     public double calcularPerimetro() {
-        throw new UnsupportedOperationException("pendiente");
+        return l1 + l2 + l3;
     }
 
     @Override
