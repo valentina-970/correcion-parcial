@@ -34,12 +34,12 @@ public class PentagonoRegular extends Figura {
 
     @Override
     public double calcularArea() {
-        throw new UnsupportedOperationException("pendiente");
+        return calcularPerimetro() * apotema / 2;
     }
 
     @Override
     public double calcularPerimetro() {
-        throw new UnsupportedOperationException("pendiente");
+        return NUMERO_LADOS * lado;
     }
 
     @Override
