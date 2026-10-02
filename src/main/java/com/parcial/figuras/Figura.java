@@ -12,4 +12,11 @@ public abstract class Figura {
     public void desplazar(double deltaX, double deltaY) {
         posicion.desplazar(deltaX, deltaY);
     }
+
+    protected void validarDimension(double valor) {
+        if (!(valor > 0)) {
+            throw new IllegalArgumentException(
+                    "Las dimensiones deben ser mayores que cero. Valor recibido: " + valor);
+        }
+    }
 }
