@@ -52,12 +52,12 @@ public class Cuadrilatero extends Figura {
 
     @Override
     public double calcularArea() {
-        throw new UnsupportedOperationException("pendiente");
+        return base * altura;
     }
 
     @Override
     public double calcularPerimetro() {
-        throw new UnsupportedOperationException("pendiente");
+        return l1 + l2 + l3 + l4;
     }
 
     @Override
