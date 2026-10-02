@@ -60,8 +60,13 @@ public class Cuadrilatero extends Figura {
         return l1 + l2 + l3 + l4;
     }
 
+    /** Suma de las distancias de los cuatro puntos al centro del plano (0,0). */
     @Override
     public double dimensionar() {
-        throw new UnsupportedOperationException("pendiente");
+        double suma = 0;
+        for (int i = 0; i < NUMERO_PUNTOS; i++) {
+            suma += Math.hypot(puntosX[i], puntosY[i]);
+        }
+        return suma;
     }
 }
