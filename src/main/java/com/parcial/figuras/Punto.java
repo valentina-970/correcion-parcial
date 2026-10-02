@@ -21,4 +21,8 @@ public class Punto {
         this.x += deltaX;
         this.y += deltaY;
     }
+
+    public double calcularDistanciaAlOrigen() {
+        return Math.hypot(x, y);
+    }
 }
