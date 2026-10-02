@@ -29,4 +29,14 @@ public abstract class Figura {
     public abstract double calcularPerimetro();
 
     public abstract double dimensionar();
+
+    public void mostrarInformacion() {
+        System.out.println("Tipo: " + getClass().getSimpleName());
+        System.out.printf("Posición: (%.2f, %.2f)%n", posicion.getX(), posicion.getY());
+        System.out.println("Dimensiones: " + describirDimensiones());
+        System.out.printf("Área: %.2f%n", calcularArea());
+        System.out.printf("Perímetro: %.2f%n", calcularPerimetro());
+        System.out.printf("Dimensionar: %.2f%n", dimensionar());
+        System.out.println("--------------------------------------");
+    }
 }
