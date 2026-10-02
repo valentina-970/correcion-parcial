@@ -21,12 +21,12 @@ public class Circulo extends Figura {
 
     @Override
     public double calcularArea() {
-        throw new UnsupportedOperationException("pendiente");
+        return Math.PI * radio * radio;
     }
 
     @Override
     public double calcularPerimetro() {
-        throw new UnsupportedOperationException("pendiente");
+        return 2 * Math.PI * radio;
     }
 
     @Override
