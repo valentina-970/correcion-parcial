@@ -19,4 +19,14 @@ public abstract class Figura {
                     "Las dimensiones deben ser mayores que cero. Valor recibido: " + valor);
         }
     }
+
+    protected abstract String describirDimensiones();
+
+    public abstract void escalar(double factor);
+
+    public abstract double calcularArea();
+
+    public abstract double calcularPerimetro();
+
+    public abstract double dimensionar();
 }
