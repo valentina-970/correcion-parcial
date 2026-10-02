@@ -1,0 +1,28 @@
+# Clases compiladas
+*.class
+out/
+target/
+build/
+
+# IDEs
+.idea/
+*.iml
+.vscode/
+.classpath
+.project
+.settings/
+nbproject/
+
+# Librerías externas
+*.jar
+lib/
+.gradle/
+
+# Variables sensibles
+.env
+*.env
+secrets.json
+
+# Sistema operativo
+.DS_Store
+Thumbs.db
