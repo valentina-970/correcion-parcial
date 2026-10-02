@@ -47,7 +47,19 @@ public class Cuadrilatero extends Figura {
 
     @Override
     public void escalar(double factor) {
-        throw new UnsupportedOperationException("pendiente");
+        validarDimension(factor);
+        base *= factor;
+        altura *= factor;
+        l1 *= factor;
+        l2 *= factor;
+        l3 *= factor;
+        l4 *= factor;
+        for (int i = 0; i < NUMERO_PUNTOS; i++) {
+            puntosX[i] *= factor;
+            puntosY[i] *= factor;
+        }
+    }
+
     }
 
     @Override
