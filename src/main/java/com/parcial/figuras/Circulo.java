@@ -16,7 +16,8 @@ public class Circulo extends Figura {
 
     @Override
     public void escalar(double factor) {
-        throw new UnsupportedOperationException("pendiente");
+        validarDimension(factor);
+        radio *= factor;
     }
 
     @Override
@@ -31,6 +32,6 @@ public class Circulo extends Figura {
 
     @Override
     public double dimensionar() {
-        throw new UnsupportedOperationException("pendiente");
+        return calcularArea();
     }
 }
