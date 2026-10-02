@@ -29,7 +29,12 @@ public class PentagonoRegular extends Figura {
 
     @Override
     public void escalar(double factor) {
-        throw new UnsupportedOperationException("pendiente");
+        validarDimension(factor);
+        lado *= factor;
+        apotema *= factor;
+        for (int i = 0; i < NUMERO_LADOS; i++) {
+            puntosX[i] *= factor;
+        }
     }
 
     @Override
@@ -42,8 +47,9 @@ public class PentagonoRegular extends Figura {
         return NUMERO_LADOS * lado;
     }
 
+    /** Suma de las coordenadas X de cada punto. */
     @Override
     public double dimensionar() {
-        throw new UnsupportedOperationException("pendiente");
+        return Arrays.stream(puntosX).sum();
     }
 }
