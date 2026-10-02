@@ -16,4 +16,9 @@ public class Punto {
     public double getY() {
         return y;
     }
+
+    public void desplazar(double deltaX, double deltaY) {
+        this.x += deltaX;
+        this.y += deltaY;
+    }
 }
