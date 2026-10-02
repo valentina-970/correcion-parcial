@@ -60,7 +60,6 @@ public class Cuadrilatero extends Figura {
         }
     }
 
-    }
 
     @Override
     public double calcularArea() {
