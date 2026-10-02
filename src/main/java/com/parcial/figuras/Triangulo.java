@@ -33,7 +33,12 @@ public class Triangulo extends Figura {
 
     @Override
     public void escalar(double factor) {
-        throw new UnsupportedOperationException("pendiente");
+        validarDimension(factor);
+        base *= factor;
+        altura *= factor;
+        l1 *= factor;
+        l2 *= factor;
+        l3 *= factor;
     }
 
     @Override
@@ -48,6 +53,6 @@ public class Triangulo extends Figura {
 
     @Override
     public double dimensionar() {
-        throw new UnsupportedOperationException("pendiente");
+        return calcularPerimetro();
     }
 }
