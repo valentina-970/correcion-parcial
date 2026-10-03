@@ -30,3 +30,4 @@ GitFlow: `main` (estable), `develop`, `feature/`, `release/`, `hotfix/`. Todo ca
 
 ## Equipo
 thorua, valentina-970, juliv06
+**Versión:** 1.0.0
