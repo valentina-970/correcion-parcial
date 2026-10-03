@@ -14,5 +14,13 @@ public class Main {
         for (Figura f : new Figura[]{circulo, triangulo, cuadrilatero, pentagono}) {
             f.mostrarInformacion();
         }
+
+        System.out.println("=== DESPLAZAR ===");
+        circulo.desplazar(2, -3);
+        circulo.mostrarInformacion();
+
+        System.out.println("=== ESCALAR x2 ===");
+        triangulo.escalar(2);
+        triangulo.mostrarInformacion();
     }
 }
