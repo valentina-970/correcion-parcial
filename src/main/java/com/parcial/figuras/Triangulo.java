@@ -1,0 +1,58 @@
+package com.parcial.figuras;
+
+public class Triangulo extends Figura {
+    private double base;
+    private double altura;
+    private double l1;
+    private double l2;
+    private double l3;
+
+    public Triangulo(Punto posicion, double base, double altura,
+                     double l1, double l2, double l3) {
+        super(posicion);
+        validarDimension(base);
+        validarDimension(altura);
+        validarDimension(l1);
+        validarDimension(l2);
+        validarDimension(l3);
+        if (l1 + l2 <= l3 || l1 + l3 <= l2 || l2 + l3 <= l1) {
+            throw new IllegalArgumentException("Los lados no forman un triángulo válido");
+        }
+        this.base = base;
+        this.altura = altura;
+        this.l1 = l1;
+        this.l2 = l2;
+        this.l3 = l3;
+    }
+
+    @Override
+    protected String describirDimensiones() {
+        return String.format("base=%.2f, altura=%.2f, lados=(%.2f, %.2f, %.2f)",
+                base, altura, l1, l2, l3);
+    }
+
+    @Override
+    public void escalar(double factor) {
+        validarDimension(factor);
+        base *= factor;
+        altura *= factor;
+        l1 *= factor;
+        l2 *= factor;
+        l3 *= factor;
+    }
+
+    @Override
+    public double calcularArea() {
+        return base * altura / 2;
+    }
+
+    @Override
+    public double calcularPerimetro() {
+        return l1 + l2 + l3;
+    }
+
+    @Override
+    public double dimensionar() {
+        return calcularPerimetro();
+    }
+}
