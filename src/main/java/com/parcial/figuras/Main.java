@@ -22,5 +22,11 @@ public class Main {
         System.out.println("=== ESCALAR x2 ===");
         triangulo.escalar(2);
         triangulo.mostrarInformacion();
+
+        System.out.println("=== COMPARACIONES ===");
+        ComparadorFiguras comparador = new ComparadorFiguras();
+        comparador.comparar(new Circulo(new Punto(0, 0), 3), new Circulo(new Punto(0, 0), 7));
+        comparador.comparar(circulo, new Circulo(new Punto(0, 0), 5));
+        comparador.comparar(circulo, triangulo);
     }
 }
