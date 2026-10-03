@@ -28,5 +28,21 @@ public class Main {
         comparador.comparar(new Circulo(new Punto(0, 0), 3), new Circulo(new Punto(0, 0), 7));
         comparador.comparar(circulo, new Circulo(new Punto(0, 0), 5));
         comparador.comparar(circulo, triangulo);
+
+        System.out.println("=== DIMENSIONES NO VÁLIDAS ===");
+        probarInvalido("Círculo con radio 0", () -> new Circulo(new Punto(0, 0), 0));
+        probarInvalido("Círculo con radio negativo", () -> new Circulo(new Punto(0, 0), -4));
+        probarInvalido("Escalar con factor 0", () -> circulo.escalar(0));
+        probarInvalido("Triángulo con lados imposibles",
+                () -> new Triangulo(new Punto(0, 0), 3, 2, 1, 1, 10));
+    }
+
+    private static void probarInvalido(String descripcion, Runnable accion) {
+        try {
+            accion.run();
+            System.out.println("[FALLO] " + descripcion + ": no lanzó excepción");
+        } catch (IllegalArgumentException e) {
+            System.out.println("[OK] " + descripcion + " -> " + e.getMessage());
+        }
     }
 }
