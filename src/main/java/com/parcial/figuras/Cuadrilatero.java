@@ -46,6 +46,15 @@ public class Cuadrilatero extends Figura {
     }
 
     @Override
+    public void desplazar(double deltaX, double deltaY) {
+        super.desplazar(deltaX, deltaY);
+        for (int i = 0; i < NUMERO_PUNTOS; i++) {
+            puntosX[i] += deltaX;
+            puntosY[i] += deltaY;
+        }
+    }
+
+    @Override
     public void escalar(double factor) {
         validarDimension(factor);
         base *= factor;

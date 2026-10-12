@@ -23,6 +23,10 @@ public class Main {
         triangulo.escalar(2);
         triangulo.mostrarInformacion();
 
+        System.out.println("=== DESPLAZAR CUADRILÁTERO ===");
+        cuadrilatero.desplazar(1, 1);
+        cuadrilatero.mostrarInformacion();
+
         System.out.println("=== COMPARACIONES ===");
         ComparadorFiguras comparador = new ComparadorFiguras();
         comparador.comparar(new Circulo(new Punto(0, 0), 3), new Circulo(new Punto(0, 0), 7));
