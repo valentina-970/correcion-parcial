@@ -3,32 +3,57 @@ package com.parcial.figuras;
 public class Triangulo extends Figura {
     private double base;
     private double altura;
-    private double l1;
-    private double l2;
-    private double l3;
+    private double lado1;
+    private double lado2;
+    private double lado3;
 
     public Triangulo(Punto posicion, double base, double altura,
-                     double l1, double l2, double l3) {
+                     double lado1, double lado2, double lado3) {
         super(posicion);
         validarDimension(base);
         validarDimension(altura);
-        validarDimension(l1);
-        validarDimension(l2);
-        validarDimension(l3);
-        if (l1 + l2 <= l3 || l1 + l3 <= l2 || l2 + l3 <= l1) {
+        validarDimension(lado1);
+        validarDimension(lado2);
+        validarDimension(lado3);
+        if (lado1 + lado2 <= lado3 || lado1 + lado3 <= lado2 || lado2 + lado3 <= lado1) {
             throw new IllegalArgumentException("Los lados no forman un triángulo válido");
         }
         this.base = base;
         this.altura = altura;
-        this.l1 = l1;
-        this.l2 = l2;
-        this.l3 = l3;
+        this.lado1 = lado1;
+        this.lado2 = lado2;
+        this.lado3 = lado3;
+    }
+
+    public double getBase() {
+        return base;
+    }
+
+    public double getAltura() {
+        return altura;
+    }
+
+    public double getLado1() {
+        return lado1;
+    }
+
+    public double getLado2() {
+        return lado2;
+    }
+
+    public double getLado3() {
+        return lado3;
     }
 
     @Override
-    protected String describirDimensiones() {
+    public String getNombre() {
+        return "Triángulo";
+    }
+
+    @Override
+    public String describirDimensiones() {
         return String.format("base=%.2f, altura=%.2f, lados=(%.2f, %.2f, %.2f)",
-                base, altura, l1, l2, l3);
+                base, altura, lado1, lado2, lado3);
     }
 
     @Override
@@ -36,9 +61,9 @@ public class Triangulo extends Figura {
         validarDimension(factor);
         base *= factor;
         altura *= factor;
-        l1 *= factor;
-        l2 *= factor;
-        l3 *= factor;
+        lado1 *= factor;
+        lado2 *= factor;
+        lado3 *= factor;
     }
 
     @Override
@@ -48,7 +73,7 @@ public class Triangulo extends Figura {
 
     @Override
     public double calcularPerimetro() {
-        return l1 + l2 + l3;
+        return lado1 + lado2 + lado3;
     }
 
     @Override
