@@ -28,6 +28,14 @@ public class PentagonoRegular extends Figura {
     }
 
     @Override
+    public void desplazar(double deltaX, double deltaY) {
+        super.desplazar(deltaX, deltaY);
+        for (int i = 0; i < NUMERO_LADOS; i++) {
+            puntosX[i] += deltaX;
+        }
+    }
+
+    @Override
     public void escalar(double factor) {
         validarDimension(factor);
         lado *= factor;
