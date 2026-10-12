@@ -1,14 +1,14 @@
-# Manejo de Figuras Geométricas
+# Manejo de Figuras Geometricas
 
-Círculo, triángulo, cuadrilátero y pentágono regular en Java, con SOLID y GitFlow.
+Circulo, triangulo, cuadrilatero y pentagono regular en Java, con SOLID y GitFlow.
 
 ## Requisitos
 - JDK 17 o superior
 - Git
 
-## Cómo ejecutar
+## Como ejecutar
 ### Desde IntelliJ
-Abrir el proyecto (pom.xml) → clic derecho en `Main.java` → Run 'Main.main()'.
+Abrir el proyecto (pom.xml) â†’ clic derecho en `Main.java` â†’ Run 'Main.main()'.
 
 ### Desde la terminal (PowerShell)
 ```powershell
@@ -30,4 +30,4 @@ GitFlow: `main` (estable), `develop`, `feature/`, `release/`, `hotfix/`. Todo ca
 
 ## Equipo
 thorua, valentina-970, juliv06
-**Versi�n:** 1.0.0
+**Versión:** 1.0.0
