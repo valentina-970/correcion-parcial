@@ -21,12 +21,30 @@ public class PentagonoRegular extends Figura {
         this.puntosX = puntosX.clone();
     }
 
+    public double getLado() {
+        return lado;
+    }
+
+    public double getApotema() {
+        return apotema;
+    }
+
+    public double[] getPuntosX() {
+        return puntosX.clone();
+    }
+
     @Override
-    protected String describirDimensiones() {
+    public String getNombre() {
+        return "Pentágono regular";
+    }
+
+    @Override
+    public String describirDimensiones() {
         return String.format("lado=%.2f, apotema=%.2f, X=%s",
                 lado, apotema, Arrays.toString(puntosX));
     }
 
+    /** Además de la posición, mueve las coordenadas X para que dimensionar siga siendo coherente. */
     @Override
     public void desplazar(double deltaX, double deltaY) {
         super.desplazar(deltaX, deltaY);
