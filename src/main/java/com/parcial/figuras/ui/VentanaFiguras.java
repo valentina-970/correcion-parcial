@@ -1,12 +1,16 @@
 package com.parcial.figuras.ui;
 
+import com.parcial.figuras.Circulo;
+import com.parcial.figuras.ComparadorFiguras;
+import com.parcial.figuras.Cuadrilatero;
 import com.parcial.figuras.Figura;
+import com.parcial.figuras.PentagonoRegular;
 import com.parcial.figuras.Punto;
+import com.parcial.figuras.Triangulo;
 import com.parcial.figuras.ui.formularios.FormularioCirculo;
 import com.parcial.figuras.ui.formularios.FormularioCuadrilatero;
 import com.parcial.figuras.ui.formularios.FormularioPentagono;
 import com.parcial.figuras.ui.formularios.FormularioTriangulo;
-import com.parcial.figuras.ComparadorFiguras;
 
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.DefaultListModel;
@@ -24,7 +28,6 @@ import java.awt.Color;
 public class VentanaFiguras {
     private static final Color COLOR_ESTADO = new Color(47, 65, 86);
     private static final Color COLOR_ERROR = new Color(185, 28, 28);
-    private final ComparadorFiguras comparador = new ComparadorFiguras();
 
     // ---- Componentes inyectados por el .form (no se instancian a mano) ----
     private JPanel panelPrincipal;
@@ -67,6 +70,7 @@ public class VentanaFiguras {
     private final DefaultComboBoxModel<FiguraRegistrada> modeloCombo2 = new DefaultComboBoxModel<>();
     private FormularioFigura formularioActual;
     private int contadorFiguras;
+    private final ComparadorFiguras comparador = new ComparadorFiguras();
 
     public VentanaFiguras() {
         listaFiguras.setModel(modeloLista);
@@ -87,7 +91,6 @@ public class VentanaFiguras {
                 mostrarFigura(obtenerFiguraSeleccionada());
             }
         });
-
         configurarOperaciones();
     }
 
@@ -200,6 +203,7 @@ public class VentanaFiguras {
         btnDesplazar.addActionListener(e -> ejecutar(this::desplazar));
         btnEscalar.addActionListener(e -> ejecutar(this::escalar));
         btnComparar.addActionListener(e -> ejecutar(this::comparar));
+        btnCargarEjemplos.addActionListener(e -> ejecutar(this::cargarEjemplos));
     }
 
     private void desplazar() {
@@ -231,6 +235,18 @@ public class VentanaFiguras {
         lblResultadoComparacion.setForeground(comparables ? COLOR_ESTADO : COLOR_ERROR);
         lblResultadoComparacion.setText("<html><body style='width:200px'>" + resultado + "</body></html>");
         mostrarEstado("Comparación realizada");
+    }
+
+    /** Crea las mismas figuras que la demostración por consola. */
+    private void cargarEjemplos() {
+        agregarFigura(new Circulo(new Punto(0, 0), 5));
+        agregarFigura(new Triangulo(new Punto(1, 1), 6, 4, 5, 5, 6));
+        agregarFigura(new Cuadrilatero(new Punto(2, 2), 4, 3, 4, 3, 4, 3,
+                new double[]{0, 4, 4, 0}, new double[]{0, 0, 3, 3}));
+        agregarFigura(new PentagonoRegular(new Punto(3, 3), 6, 4.13, new double[]{1, 2, 3, 4, 5}));
+        agregarFigura(new Circulo(new Punto(0, 0), 3));
+        agregarFigura(new Circulo(new Punto(0, 0), 7));
+        mostrarEstado("Ejemplos cargados: 6 figuras");
     }
 
     // ---------------------------------------------------------------
