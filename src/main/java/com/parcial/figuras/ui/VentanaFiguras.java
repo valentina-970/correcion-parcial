@@ -1,7 +1,12 @@
 package com.parcial.figuras.ui;
 
+import com.parcial.figuras.Circulo;
+import com.parcial.figuras.ComparadorFiguras;
+import com.parcial.figuras.Cuadrilatero;
 import com.parcial.figuras.Figura;
+import com.parcial.figuras.PentagonoRegular;
 import com.parcial.figuras.Punto;
+import com.parcial.figuras.Triangulo;
 import com.parcial.figuras.ui.formularios.FormularioCirculo;
 import com.parcial.figuras.ui.formularios.FormularioCuadrilatero;
 import com.parcial.figuras.ui.formularios.FormularioPentagono;
@@ -65,6 +70,7 @@ public class VentanaFiguras {
     private final DefaultComboBoxModel<FiguraRegistrada> modeloCombo2 = new DefaultComboBoxModel<>();
     private FormularioFigura formularioActual;
     private int contadorFiguras;
+    private final ComparadorFiguras comparador = new ComparadorFiguras();
 
     public VentanaFiguras() {
         listaFiguras.setModel(modeloLista);
@@ -85,6 +91,7 @@ public class VentanaFiguras {
                 mostrarFigura(obtenerFiguraSeleccionada());
             }
         });
+        configurarOperaciones();
     }
 
     public JPanel getPanelPrincipal() {
@@ -186,6 +193,60 @@ public class VentanaFiguras {
         figura.mostrarInformacion();
         JOptionPane.showMessageDialog(panelPrincipal, figura.obtenerInformacion(),
                 "Información de la figura", JOptionPane.INFORMATION_MESSAGE);
+    }
+
+    // ---------------------------------------------------------------
+    // Operaciones: desplazar, escalar, comparar y ejemplos
+    // ---------------------------------------------------------------
+
+    private void configurarOperaciones() {
+        btnDesplazar.addActionListener(e -> ejecutar(this::desplazar));
+        btnEscalar.addActionListener(e -> ejecutar(this::escalar));
+        btnComparar.addActionListener(e -> ejecutar(this::comparar));
+        btnCargarEjemplos.addActionListener(e -> ejecutar(this::cargarEjemplos));
+    }
+
+    private void desplazar() {
+        Figura figura = exigirFiguraSeleccionada();
+        double deltaX = LectorCampos.leer(txtDeltaX, "Desplazar X");
+        double deltaY = LectorCampos.leer(txtDeltaY, "Desplazar Y");
+        figura.desplazar(deltaX, deltaY);
+        mostrarFigura(figura);
+        mostrarEstado(String.format("%s desplazado (%.2f, %.2f)", figura.getNombre(), deltaX, deltaY));
+    }
+
+    private void escalar() {
+        Figura figura = exigirFiguraSeleccionada();
+        double factor = LectorCampos.leer(txtFactor, "Factor");
+        figura.escalar(factor);
+        mostrarFigura(figura);
+        mostrarEstado(String.format("%s escalado x%.2f", figura.getNombre(), factor));
+    }
+
+    private void comparar() {
+        FiguraRegistrada primera = (FiguraRegistrada) cmbFigura1.getSelectedItem();
+        FiguraRegistrada segunda = (FiguraRegistrada) cmbFigura2.getSelectedItem();
+        if (primera == null || segunda == null) {
+            throw new IllegalArgumentException("Se necesitan dos figuras para comparar");
+        }
+        String resultado = comparador.obtenerResultado(primera.getFigura(), segunda.getFigura());
+        comparador.comparar(primera.getFigura(), segunda.getFigura());
+        boolean comparables = comparador.sonComparables(primera.getFigura(), segunda.getFigura());
+        lblResultadoComparacion.setForeground(comparables ? COLOR_ESTADO : COLOR_ERROR);
+        lblResultadoComparacion.setText("<html><body style='width:200px'>" + resultado + "</body></html>");
+        mostrarEstado("Comparación realizada");
+    }
+
+    /** Crea las mismas figuras que la demostración por consola. */
+    private void cargarEjemplos() {
+        agregarFigura(new Circulo(new Punto(0, 0), 5));
+        agregarFigura(new Triangulo(new Punto(1, 1), 6, 4, 5, 5, 6));
+        agregarFigura(new Cuadrilatero(new Punto(2, 2), 4, 3, 4, 3, 4, 3,
+                new double[]{0, 4, 4, 0}, new double[]{0, 0, 3, 3}));
+        agregarFigura(new PentagonoRegular(new Punto(3, 3), 6, 4.13, new double[]{1, 2, 3, 4, 5}));
+        agregarFigura(new Circulo(new Punto(0, 0), 3));
+        agregarFigura(new Circulo(new Punto(0, 0), 7));
+        mostrarEstado("Ejemplos cargados: 6 figuras");
     }
 
     // ---------------------------------------------------------------
