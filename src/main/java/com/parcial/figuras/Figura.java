@@ -20,7 +20,14 @@ public abstract class Figura {
         }
     }
 
-    protected abstract String describirDimensiones();
+    /** Devuelve una copia para que nadie modifique la posición desde fuera. */
+    public Punto getPosicion() {
+        return new Punto(posicion.getX(), posicion.getY());
+    }
+
+    public abstract String getNombre();
+
+    public abstract String describirDimensiones();
 
     public abstract void escalar(double factor);
 
@@ -30,13 +37,17 @@ public abstract class Figura {
 
     public abstract double dimensionar();
 
+    public String obtenerInformacion() {
+        return String.format("Tipo: %s%n", getNombre())
+                + String.format("Posición: (%.2f, %.2f)%n", posicion.getX(), posicion.getY())
+                + String.format("Dimensiones: %s%n", describirDimensiones())
+                + String.format("Área: %.2f%n", calcularArea())
+                + String.format("Perímetro: %.2f%n", calcularPerimetro())
+                + String.format("Dimensionar: %.2f%n", dimensionar());
+    }
+
     public void mostrarInformacion() {
-        System.out.println("Tipo: " + getClass().getSimpleName());
-        System.out.printf("Posición: (%.2f, %.2f)%n", posicion.getX(), posicion.getY());
-        System.out.println("Dimensiones: " + describirDimensiones());
-        System.out.printf("Área: %.2f%n", calcularArea());
-        System.out.printf("Perímetro: %.2f%n", calcularPerimetro());
-        System.out.printf("Dimensionar: %.2f%n", dimensionar());
+        System.out.print(obtenerInformacion());
         System.out.println("--------------------------------------");
     }
 }

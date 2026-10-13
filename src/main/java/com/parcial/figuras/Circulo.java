@@ -9,8 +9,17 @@ public class Circulo extends Figura {
         this.radio = radio;
     }
 
+    public double getRadio() {
+        return radio;
+    }
+
     @Override
-    protected String describirDimensiones() {
+    public String getNombre() {
+        return "Círculo";
+    }
+
+    @Override
+    public String describirDimensiones() {
         return String.format("radio=%.2f", radio);
     }
 
