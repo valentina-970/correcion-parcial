@@ -6,6 +6,7 @@ import com.parcial.figuras.ui.formularios.FormularioCirculo;
 import com.parcial.figuras.ui.formularios.FormularioCuadrilatero;
 import com.parcial.figuras.ui.formularios.FormularioPentagono;
 import com.parcial.figuras.ui.formularios.FormularioTriangulo;
+import com.parcial.figuras.ComparadorFiguras;
 
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.DefaultListModel;
@@ -23,6 +24,7 @@ import java.awt.Color;
 public class VentanaFiguras {
     private static final Color COLOR_ESTADO = new Color(47, 65, 86);
     private static final Color COLOR_ERROR = new Color(185, 28, 28);
+    private final ComparadorFiguras comparador = new ComparadorFiguras();
 
     // ---- Componentes inyectados por el .form (no se instancian a mano) ----
     private JPanel panelPrincipal;
@@ -197,6 +199,7 @@ public class VentanaFiguras {
     private void configurarOperaciones() {
         btnDesplazar.addActionListener(e -> ejecutar(this::desplazar));
         btnEscalar.addActionListener(e -> ejecutar(this::escalar));
+        btnComparar.addActionListener(e -> ejecutar(this::comparar));
     }
 
     private void desplazar() {
@@ -214,6 +217,20 @@ public class VentanaFiguras {
         figura.escalar(factor);
         mostrarFigura(figura);
         mostrarEstado(String.format("%s escalado x%.2f", figura.getNombre(), factor));
+    }
+
+    private void comparar() {
+        FiguraRegistrada primera = (FiguraRegistrada) cmbFigura1.getSelectedItem();
+        FiguraRegistrada segunda = (FiguraRegistrada) cmbFigura2.getSelectedItem();
+        if (primera == null || segunda == null) {
+            throw new IllegalArgumentException("Se necesitan dos figuras para comparar");
+        }
+        String resultado = comparador.obtenerResultado(primera.getFigura(), segunda.getFigura());
+        comparador.comparar(primera.getFigura(), segunda.getFigura());
+        boolean comparables = comparador.sonComparables(primera.getFigura(), segunda.getFigura());
+        lblResultadoComparacion.setForeground(comparables ? COLOR_ESTADO : COLOR_ERROR);
+        lblResultadoComparacion.setText("<html><body style='width:200px'>" + resultado + "</body></html>");
+        mostrarEstado("Comparación realizada");
     }
 
     // ---------------------------------------------------------------
