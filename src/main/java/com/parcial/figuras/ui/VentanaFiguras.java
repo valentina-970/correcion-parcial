@@ -85,6 +85,8 @@ public class VentanaFiguras {
                 mostrarFigura(obtenerFiguraSeleccionada());
             }
         });
+
+        configurarOperaciones();
     }
 
     public JPanel getPanelPrincipal() {
@@ -186,6 +188,32 @@ public class VentanaFiguras {
         figura.mostrarInformacion();
         JOptionPane.showMessageDialog(panelPrincipal, figura.obtenerInformacion(),
                 "Información de la figura", JOptionPane.INFORMATION_MESSAGE);
+    }
+
+    // ---------------------------------------------------------------
+    // Operaciones: desplazar, escalar, comparar y ejemplos
+    // ---------------------------------------------------------------
+
+    private void configurarOperaciones() {
+        btnDesplazar.addActionListener(e -> ejecutar(this::desplazar));
+        btnEscalar.addActionListener(e -> ejecutar(this::escalar));
+    }
+
+    private void desplazar() {
+        Figura figura = exigirFiguraSeleccionada();
+        double deltaX = LectorCampos.leer(txtDeltaX, "Desplazar X");
+        double deltaY = LectorCampos.leer(txtDeltaY, "Desplazar Y");
+        figura.desplazar(deltaX, deltaY);
+        mostrarFigura(figura);
+        mostrarEstado(String.format("%s desplazado (%.2f, %.2f)", figura.getNombre(), deltaX, deltaY));
+    }
+
+    private void escalar() {
+        Figura figura = exigirFiguraSeleccionada();
+        double factor = LectorCampos.leer(txtFactor, "Factor");
+        figura.escalar(factor);
+        mostrarFigura(figura);
+        mostrarEstado(String.format("%s escalado x%.2f", figura.getNombre(), factor));
     }
 
     // ---------------------------------------------------------------
