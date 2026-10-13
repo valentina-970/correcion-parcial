@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form xmlns="http://www.intellij.com/uidesigner/form/" version="1" bind-to-class="com.parcial.figuras.ui.formularios.FormularioPentagono">
+  <grid id="2c6d5" binding="panel" layout-manager="GridBagLayout">
+    <constraints>
+      <xy x="20" y="20" width="560" height="300"/>
+    </constraints>
+    <properties>
+      <background color="-659477"/>
+    </properties>
+    <border type="empty">
+      <size top="10" left="10" bottom="10" right="10"/>
+    </border>
+    <children>
+      <component id="2c61a" class="javax.swing.JLabel">
+        <constraints>
+          <grid row="0" column="0" row-span="1" col-span="6" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+          <gridbag top="4" left="6" bottom="10" right="6" weightx="0.0" weighty="0.0"/>
+        </constraints>
+        <properties>
+          <font size="15" style="1"/>
+          <foreground color="-13680298"/>
+          <text value="Medidas"/>
+        </properties>
+      </component>
+      <component id="2c625" class="javax.swing.JLabel">
+        <constraints>
+          <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+          <gridbag top="4" left="6" bottom="4" right="6" weightx="0.0" weighty="0.0"/>
+        </constraints>
+        <properties>
+          <font style="1"/>
+          <foreground color="-13680298"/>
+          <text value="Lado"/>
+        </properties>
+      </component>
+      <component id="2c630" class="javax.swing.JTextField" binding="txtLado">
+        <constraints>
+          <grid row="1" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false"/>
+          <gridbag top="4" left="4" bottom="4" right="4" weightx="1.0" weighty="0.0"/>
+        </constraints>
+        <properties>
+          <columns value="6"/>
+          <foreground color="-13680298"/>
+          <horizontalAlignment value="0"/>
+          <text value="60"/>
+        </properties>
+      </component>
+      <component id="2c63b" class="javax.swing.JLabel">
+        <constraints>
+          <grid row="1" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+          <gridbag top="4" left="6" bottom="4" right="6" weightx="0.0" weighty="0.0"/>
+        </constraints>
+        <properties>
+          <font style="1"/>
+          <foreground color="-13680298"/>
+          <text value="Apotema"/>
+        </properties>
+      </component>
+      <component id="2c646" class="javax.swing.JTextField" binding="txtApotema">
+        <constraints>
+          <grid row="1" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false"/>
+          <gridbag top="4" left="4" bottom="4" right="4" weightx="1.0" weighty="0.0"/>
+        </constraints>
+        <properties>
+          <columns value="6"/>
+          <foreground color="-13680298"/>
+          <horizontalAlignment value="0"/>
+          <text value="41.29"/>
+        </properties>
+      </component>
+      <component id="2c651" class="javax.swing.JLabel">
+        <constraints>
+          <grid row="2" column="0" row-span="1" col-span="6" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+          <gridbag top="4" left="6" bottom="10" right="6" weightx="0.0" weighty="0.0"/>
+        </constraints>
+        <properties>
+          <font size="15" style="1"/>
+          <foreground color="-13680298"/>
+          <text value="Coordenadas X de los puntos"/>
+        </properties>
+      </component>
+      <component id="2c65c" class="javax.swing.JLabel">
+        <constraints>
+          <grid row="3" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="8" fill="1" indent="0" use-parent-layout="false"/>
+          <gridbag top="6" left="4" bottom="0" right="4" weightx="0.0" weighty="0.0"/>
+        </constraints>
+        <properties>
+          <background color="-3614234"/>
+          <font style="1"/>
+          <foreground color="-13680298"/>
+          <horizontalAlignment value="0"/>
+          <opaque value="true"/>
+          <text value="P1"/>
+        </properties>
+      </component>
+      <component id="2c667" class="javax.swing.JLabel">
+        <constraints>
+          <grid row="3" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="8" fill="1" indent="0" use-parent-layout="false"/>
+          <gridbag top="6" left="4" bottom="0" right="4" weightx="0.0" weighty="0.0"/>
+        </constraints>
+        <properties>
+          <background color="-3614234"/>
+          <font style="1"/>
+          <foreground color="-13680298"/>
+          <horizontalAlignment value="0"/>
+          <opaque value="true"/>
+          <text value="P2"/>
+        </properties>
+      </component>
+      <component id="2c672" class="javax.swing.JLabel">
+        <constraints>
+          <grid row="3" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="8" fill="1" indent="0" use-parent-layout="false"/>
+          <gridbag top="6" left="4" bottom="0" right="4" weightx="0.0" weighty="0.0"/>
+        </constraints>
+        <properties>
+          <background color="-3614234"/>
+          <font style="1"/>
+          <foreground color="-13680298"/>
+          <horizontalAlignment value="0"/>
+          <opaque value="true"/>
+          <text value="P3"/>
+        </properties>
+      </component>
+      <component id="2c67d" class="javax.swing.JLabel">
+        <constraints>
+          <grid row="3" column="4" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="8" fill="1" indent="0" use-parent-layout="false"/>
+          <gridbag top="6" left="4" bottom="0" right="4" weightx="0.0" weighty="0.0"/>
+        </constraints>
+        <properties>
+          <background color="-3614234"/>
+          <font style="1"/>
+          <foreground color="-13680298"/>
+          <horizontalAlignment value="0"/>
+          <opaque value="true"/>
+          <text value="P4"/>
+        </properties>
+      </component>
+      <component id="2c688" class="javax.swing.JLabel">
+        <constraints>
+          <grid row="3" column="5" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="8" fill="1" indent="0" use-parent-layout="false"/>
+          <gridbag top="6" left="4" bottom="0" right="4" weightx="0.0" weighty="0.0"/>
+        </constraints>
+        <properties>
+          <background color="-3614234"/>
+          <font style="1"/>
+          <foreground color="-13680298"/>
+          <horizontalAlignment value="0"/>
+          <opaque value="true"/>
+          <text value="P5"/>
+        </properties>
+      </component>
+      <component id="2c693" class="javax.swing.JLabel">
+        <constraints>
+          <grid row="4" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+          <gridbag top="4" left="6" bottom="4" right="6" weightx="0.0" weighty="0.0"/>
+        </constraints>
+        <properties>
+          <font style="1"/>
+          <foreground color="-13680298"/>
+          <text value="X"/>
+        </properties>
+      </component>
+      <component id="2c69e" class="javax.swing.JTextField" binding="txtX1">
+        <constraints>
+          <grid row="4" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false"/>
+          <gridbag top="4" left="4" bottom="4" right="4" weightx="1.0" weighty="0.0"/>
+        </constraints>
+        <properties>
+          <columns value="6"/>
+          <foreground color="-13680298"/>
+          <horizontalAlignment value="0"/>
+          <text value="1"/>
+        </properties>
+      </component>
+      <component id="2c6a9" class="javax.swing.JTextField" binding="txtX2">
+        <constraints>
+          <grid row="4" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false"/>
+          <gridbag top="4" left="4" bottom="4" right="4" weightx="1.0" weighty="0.0"/>
+        </constraints>
+        <properties>
+          <columns value="6"/>
+          <foreground color="-13680298"/>
+          <horizontalAlignment value="0"/>
+          <text value="2"/>
+        </properties>
+      </component>
+      <component id="2c6b4" class="javax.swing.JTextField" binding="txtX3">
+        <constraints>
+          <grid row="4" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false"/>
+          <gridbag top="4" left="4" bottom="4" right="4" weightx="1.0" weighty="0.0"/>
+        </constraints>
+        <properties>
+          <columns value="6"/>
+          <foreground color="-13680298"/>
+          <horizontalAlignment value="0"/>
+          <text value="3"/>
+        </properties>
+      </component>
+      <component id="2c6bf" class="javax.swing.JTextField" binding="txtX4">
+        <constraints>
+          <grid row="4" column="4" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false"/>
+          <gridbag top="4" left="4" bottom="4" right="4" weightx="1.0" weighty="0.0"/>
+        </constraints>
+        <properties>
+          <columns value="6"/>
+          <foreground color="-13680298"/>
+          <horizontalAlignment value="0"/>
+          <text value="4"/>
+        </properties>
+      </component>
+      <component id="2c6ca" class="javax.swing.JTextField" binding="txtX5">
+        <constraints>
+          <grid row="4" column="5" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false"/>
+          <gridbag top="4" left="4" bottom="4" right="4" weightx="1.0" weighty="0.0"/>
+        </constraints>
+        <properties>
+          <columns value="6"/>
+          <foreground color="-13680298"/>
+          <horizontalAlignment value="0"/>
+          <text value="5"/>
+        </properties>
+      </component>
+    </children>
+  </grid>
+</form>
